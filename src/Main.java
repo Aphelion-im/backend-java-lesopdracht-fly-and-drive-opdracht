@@ -10,6 +10,7 @@ public class Main {
 
         // FlyingCar instance
         FlyingCar flyingCar1 = new FlyingCar();
+        FlyingCar flyingCar2 = new FlyingCar();
         flyingCar1.startEngine();
         flyingCar1.accelerate();
         flyingCar1.takeOff();
@@ -19,9 +20,10 @@ public class Main {
         flyingCar1.turnOffEngine();
 
         Airport airport1 = new Airport("Schiphol", "Amsterdam");
+
         airport1.addFlyingVehicles(flyingCar1);
+        airport1.addFlyingVehicles(flyingCar2);
+        System.out.println(airport1.getLocation());
         // airport1.addFlyingVehicles(car1); - Error.
-
-
     }
 }

@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Airport {
 
-    private String nameOfAirport;
-    private String location;
-    private static int numberOfFlyingVehicles;
-    ArrayList<Flyable> flyingVehiclesList = new ArrayList<>(); // Dus mogelijk om Interfaces toe te voegen aan ArrayList!
+    private final String nameOfAirport;
+    private final String location;
+    private int numberOfFlyingVehicles;
+    private final List<Flyable> flyingVehiclesList = new ArrayList<>(); // Dus mogelijk om Interfaces toe te voegen aan ArrayList!
 
     public Airport(String nameOfAirport, String location) {
         this.nameOfAirport = nameOfAirport;
@@ -16,8 +17,18 @@ public class Airport {
         System.out.println("Flying vehicle has been added to " + this.nameOfAirport + "!");
         this.flyingVehiclesList.add(flyingVehicle);
         numberOfFlyingVehicles++;
-        System.out.println("This Airport now has " + numberOfFlyingVehicles + " flying vehicle");
+        System.out.println(this.nameOfAirport + " now has " + numberOfFlyingVehicles + " flying vehicles");
     }
 
+    public String getNameOfAirport() {
+        return nameOfAirport;
+    }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public int getNumberOfFlyingVehicles() {
+        return numberOfFlyingVehicles;
+    }
 }
